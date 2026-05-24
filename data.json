@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": "xiaomi-band-9",
+      "name": "Xiaomi Smart Band 9 Active",
+      "price": "Rp 369.000",
+      "rawPrice": 369000,
+      "image": "https://p16-oec-va.ibyteimg.com/tos-maliva-i-o3syd03w52-us/4527d42901c54c4caea4f9e003d1aceb~tplv-o3syd03w52-resize-jpeg:250:250.jpeg",
+      "link": "https://vt.tokopedia.com/t/ZS9Lbfu7dBbX3-lDSlU/",
+      "review": "Berfungsi dengan baik, mantap, sangat affordable dan enjoy. Sangat membantu untuk berprogress everyday. jalan kaki menjadi lebih menyenangkan meskipun capek juga sih. But its okay, I enjoy luv",
+      "rating": "4.9",
+      "reviewsCount": "11.8k",
+      "category": "wearables",
+      "bestFor": "Daily Fitness Tracking",
+      "rank": 1
+    },
+    {
+      "id": "madlions-mad60",
+      "name": "MADLIONS MAD60 HE 8K Hall Effect 60% Keyboard",
+      "price": "Rp 450.500",
+      "rawPrice": 450500,
+      "image": "https://down-id.img.susercontent.com/file/id-11134207-8224u-mk6ty99ixjpfc9",
+      "link": "https://tk.tokopedia.com/ZS9KLcUeL/",
+      "review": "Keyboard mantap banget buat main game kompetitif. Rapid trigger nya berasa banget, build quality juga solid parah buat harga segini.",
+      "rating": "4.8",
+      "reviewsCount": "1.2k",
+      "category": "gaming",
+      "bestFor": "Competitive Gaming",
+      "rank": 2
+    },
+    {
+      "id": "vegue-m6s",
+      "name": "Vegue M6S Microphone",
+      "price": "Rp 250.000",
+      "rawPrice": 250000,
+      "image": "https://down-id.img.susercontent.com/file/id-11134207-8224s-mkbsgnkpcoi07c",
+      "link": "https://s.shopee.co.id/6L1WxlgnEZ",
+      "review": "Diluar ekspektasi microphone nya sangat bagus suaranya apalagi dengan settingan tambahan di obs studio mantep banget suaranya. Walaupun di harga 200ribuan tapi memiliki kualitas seperti harga 500 ribuan.",
+      "rating": "4.9",
+      "reviewsCount": "1.2k",
+      "category": "audio",
+      "bestFor": "Streaming & Podcasting",
+      "rank": 3
+    }
+  ]
+}

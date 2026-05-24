@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Elite Tech Gear | 2026 Buying Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Legal Disclosure -->
+  <div class="disclosure">
+    Affiliate Disclosure: We may earn a commission if you purchase through our links, at no extra cost to you.
+  </div>
+
+  <!-- Adaptive Navbar -->
+  <nav class="nav-container">
+    <a href="#" class="nav-item active"><span>🏠</span> Home</a>
+    <a href="#spotlight" class="nav-item"><span>⭐</span> Top 3</a>
+    <a href="#grid" class="nav-item"><span>📱</span> All Gear</a>
+    <a href="#compare" class="nav-item"><span>⚖️</span> Compare</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">🌓</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Stop Wasting Money on Bad Gear.</h1>
+    <p>We rigorously tested the most affordable and high-quality tech in 2026 so you don't have to guess. Here are the winners.</p>
+  </header>
+
+  <div class="container">
+    
+    <!-- Top 3 Spotlight -->
+    <h2 class="section-title" id="spotlight">Top 3 Spotlight</h2>
+    <div class="product-grid" id="spotlight-container">
+      <!-- Injected via JS -->
+    </div>
+
+    <!-- Comparison Table -->
+    <h2 class="section-title" id="compare">Spec Comparison</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Best For</th>
+            <th>Rating</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody id="comparison-tbody">
+          <!-- Injected via JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Filterable Product Grid -->
+    <h2 class="section-title" id="grid">Browse All Gear</h2>
+    <div class="filters">
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="wearables">Wearables</button>
+      <button class="filter-btn" data-cat="gaming">Gaming</button>
+      <button class="filter-btn" data-cat="audio">Audio</button>
+    </div>
+    
+    <div class="product-grid" id="grid-container">
+      <!-- Injected via JS -->
+    </div>
+
+  </div>
+
+  <!-- Vanilla JS Engine -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      
+      // Theme Toggle Logic
+      const themeBtn = document.getElementById('theme-toggle');
+      themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+      });
+
+      // Fetch & Render Engine
+      try {
+        const response = await fetch('data.json');
+        const data = await response.json();
+        const products = data.products;
+
+        const spotlightContainer = document.getElementById('spotlight-container');
+        const gridContainer = document.getElementById('grid-container');
+        const tableBody = document.getElementById('comparison-tbody');
+
+        // Render Cards Function
+        const renderCards = (items, container) => {
+          container.innerHTML = items.map(p => `
+            <article class="card">
+              <div class="card-img-wrapper">
+                <img src="${p.image}" alt="${p.name}" class="card-img" loading="lazy">
+              </div>
+              <div class="badge">🎯 ${p.bestFor}</div>
+              <h3 class="card-title">${p.name}</h3>
+              <div class="card-stats">
+                <span><span class="star">★</span> ${p.rating} (${p.reviewsCount} reviews)</span>
+              </div>
+              <div class="price">${p.price}</div>
+              <p class="review-snippet">"${p.review}"</p>
+              <!-- Target Blank + Noopener for strict affiliate compliance -->
+              <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="btn">Check Price & Buy</a>
+            </article>
+          `).join('');
+        };
+
+        // Render Comparison Table Function
+        const renderTable = (items) => {
+          tableBody.innerHTML = items.map(p => `
+            <tr>
+              <td style="font-weight: 600; color: var(--text-primary);">${p.name}</td>
+              <td>${p.bestFor}</td>
+              <td><span class="star">★</span> ${p.rating}</td>
+              <td style="color: var(--accent-color); font-weight: 600;">${p.price}</td>
+            </tr>
+          `).join('');
+        };
+
+        // Initialize Render
+        renderCards(products.slice(0, 3), spotlightContainer); // Top 3 Spotlight
+        renderCards(products, gridContainer); // Full Grid
+        renderTable(products.slice(0, 3)); // Top 3 Table
+
+        // Category Filtering Engine
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            // UI Toggle
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            // Logic Filter
+            const cat = e.target.getAttribute('data-cat');
+            const filteredProducts = cat === 'all' 
+              ? products 
+              : products.filter(p => p.category === cat);
+            
+            renderCards(filteredProducts, gridContainer);
+          });
+        });
+
+      } catch (error) {
+        console.error("Error loading products. Ensure data.json is in the same directory.", error);
+        document.getElementById('grid-container').innerHTML = `<p style="color: red;">Error loading products.</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
