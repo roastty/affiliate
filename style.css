@@ -27,7 +27,7 @@ body {
   font-family: var(--font-main); background: var(--bg-color);
   color: var(--text-primary); line-height: 1.5;
   transition: background 0.3s ease;
-  padding-bottom: 80px; /* Space for mobile nav */
+  padding-bottom: 80px;
 }
 
 /* --- DISCLOSURE --- */
@@ -37,7 +37,7 @@ body {
   border-bottom: 1px solid var(--border-color);
 }
 
-/* --- NAVIGATION (Mobile Bottom, Desktop Top) --- */
+/* --- NAVIGATION --- */
 .nav-container {
   position: fixed; bottom: 0; left: 0; width: 100%;
   background: var(--card-bg); backdrop-filter: var(--blur-effect);
@@ -66,7 +66,7 @@ body {
 /* --- SECTION TITLES --- */
 .section-title { font-size: 1.5rem; margin: 0 20px 20px; font-weight: 700; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;}
 
-/* --- PRODUCT CARDS (Spotlight & Grid) --- */
+/* --- PRODUCT CARDS --- */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .product-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; }
 
@@ -87,15 +87,23 @@ body {
 .price { font-size: 1.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
 .review-snippet { font-size: 0.85rem; color: var(--text-secondary); font-style: italic; margin-bottom: 16px; border-left: 2px solid var(--border-color); padding-left: 10px; flex-grow: 1; }
 
-/* --- BUTTONS (Micro-interactions) --- */
+/* --- BUTTONS (Micro-interactions & Platforms) --- */
 .btn {
-  display: block; width: 100%; text-align: center;
-  background: var(--accent-color); color: #fff;
+  display: flex; justify-content: center; align-items: center; gap: 8px;
+  width: 100%; text-align: center; color: #fff;
   padding: 14px; border-radius: 10px; font-weight: 600;
-  text-decoration: none; transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s;
+  text-decoration: none; transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), all 0.2s;
 }
-.btn:active { transform: scale(0.96); } /* Squish Effect */
-.btn:hover { background: var(--accent-hover); }
+.btn:active { transform: scale(0.96); } 
+
+.btn-tokopedia { background: #00AA5B; }
+.btn-tokopedia:hover { background: #008f4c; }
+.btn-shopee { background: #EE4D2D; }
+.btn-shopee:hover { background: #d73a1e; }
+.btn-tiktok { background: #111111; color: #25F4EE; border: 1px solid #25F4EE; }
+.btn-tiktok:hover { background: #25F4EE; color: #111111; }
+.btn-default { background: var(--accent-color); }
+.btn-default:hover { background: var(--accent-hover); }
 
 /* --- FILTERS --- */
 .filters { display: flex; gap: 10px; overflow-x: auto; margin-bottom: 20px; padding-bottom: 8px; scrollbar-width: none; }
