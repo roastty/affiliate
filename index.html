@@ -70,6 +70,7 @@
   </div>
 
   <!-- Vanilla JS Engine -->
+  <!-- Vanilla JS Engine -->
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
       
@@ -78,6 +79,20 @@
       themeBtn.addEventListener('click', () => {
         document.body.classList.toggle('light-mode');
       });
+
+      // Platform Detector Logic
+      const getPlatform = (url) => {
+        const lowerUrl = url.toLowerCase();
+        if (lowerUrl.includes('tokopedia')) {
+          return { class: 'btn-tokopedia', text: 'Buy on Tokopedia' };
+        } else if (lowerUrl.includes('shopee')) {
+          return { class: 'btn-shopee', text: 'Buy on Shopee' };
+        } else if (lowerUrl.includes('tiktok')) {
+          return { class: 'btn-tiktok', text: 'Buy on TikTok' };
+        } else {
+          return { class: 'btn-default', text: 'Check Price & Buy' }; // Fallback
+        }
+      };
 
       // Fetch & Render Engine
       try {
@@ -91,10 +106,14 @@
 
         // Render Cards Function
         const renderCards = (items, container) => {
-          container.innerHTML = items.map(p => `
+          container.innerHTML = items.map(p => {
+            // Automatically detect platform colors based on link
+            const platform = getPlatform(p.link);
+            
+            return `
             <article class="card">
               <div class="card-img-wrapper">
-                <img src="${p.image}" alt="${p.name}" class="card-img" loading="lazy">
+                <img src="${p.image}" alt="${p.name}" class="card-img" loading="lazy" onerror="this.src='https://placehold.co/400x400/18181b/a1a1aa?text=Image+Unavailable'">
               </div>
               <div class="badge">🎯 ${p.bestFor}</div>
               <h3 class="card-title">${p.name}</h3>
@@ -103,10 +122,13 @@
               </div>
               <div class="price">${p.price}</div>
               <p class="review-snippet">"${p.review}"</p>
-              <!-- Target Blank + Noopener for strict affiliate compliance -->
-              <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="btn">Check Price & Buy</a>
+              
+              <!-- Dynamic Button -->
+              <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="btn ${platform.class}">
+                ${platform.text}
+              </a>
             </article>
-          `).join('');
+          `}).join('');
         };
 
         // Render Comparison Table Function
@@ -129,11 +151,9 @@
         // Category Filtering Engine
         document.querySelectorAll('.filter-btn').forEach(btn => {
           btn.addEventListener('click', (e) => {
-            // UI Toggle
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             
-            // Logic Filter
             const cat = e.target.getAttribute('data-cat');
             const filteredProducts = cat === 'all' 
               ? products 
@@ -144,7 +164,7 @@
         });
 
       } catch (error) {
-        console.error("Error loading products. Ensure data.json is in the same directory.", error);
+        console.error("Error loading products.", error);
         document.getElementById('grid-container').innerHTML = `<p style="color: red;">Error loading products.</p>`;
       }
     });
