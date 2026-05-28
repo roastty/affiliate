@@ -1,17 +1,17 @@
 {
   "products": [
     {
-      "id": "xiaomi-band-9",
-      "name": "Xiaomi Smart Band 9 Active",
-      "price": "Rp 369.000",
-      "rawPrice": 369000,
-      "image": "https://p16-oec-va.ibyteimg.com/tos-maliva-i-o3syd03w52-us/4527d42901c54c4caea4f9e003d1aceb~tplv-o3syd03w52-resize-jpeg:250:250.jpeg",
-      "link": "https://vt.tokopedia.com/t/ZS9Lbfu7dBbX3-lDSlU/",
-      "review": "Berfungsi dengan baik, mantap, sangat affordable dan enjoy. Sangat membantu untuk berprogress everyday. jalan kaki menjadi lebih menyenangkan meskipun capek juga sih. But its okay, I enjoy luv",
+      "id": "vegue-m6s",
+      "name": "Vegue M6S Microphone",
+      "price": "Rp 250.000",
+      "rawPrice": 250000,
+      "image": "https://down-id.img.susercontent.com/file/id-11134207-8224s-mkbsgnkpcoi07c",
+      "link": "https://s.shopee.co.id/6L1WxlgnEZ",
+      "review": "Diluar ekspektasi microphone nya sangat bagus suaranya apalagi dengan settingan tambahan di obs studio mantep banget suaranya. Walaupun di harga 200ribuan tapi memiliki kualitas seperti microphone harga 500 ribuan.",
       "rating": "4.9",
-      "reviewsCount": "11.8k",
-      "category": "wearables",
-      "bestFor": "Daily Fitness Tracking",
+      "reviewsCount": "1.2k",
+      "category": "audio",
+      "bestFor": "Streaming & Podcasting",
       "rank": 1
     },
     {
@@ -29,18 +29,32 @@
       "rank": 2
     },
     {
-      "id": "vegue-m6s",
-      "name": "Vegue M6S Microphone",
-      "price": "Rp 250.000",
-      "rawPrice": 250000,
-      "image": "https://down-id.img.susercontent.com/file/id-11134207-8224s-mkbsgnkpcoi07c",
-      "link": "https://s.shopee.co.id/6L1WxlgnEZ",
-      "review": "Diluar ekspektasi microphone nya sangat bagus suaranya apalagi dengan settingan tambahan di obs studio mantep banget suaranya. Walaupun di harga 200ribuan tapi memiliki kualitas seperti harga 500 ribuan.",
-      "rating": "4.9",
-      "reviewsCount": "1.2k",
-      "category": "audio",
-      "bestFor": "Streaming & Podcasting",
+      "id": "noir-m1-nex",
+      "name": "Noir M1 NEX / M1-Nex Wireless Gaming Mouse",
+      "price": "Rp 318.000",
+      "rawPrice": 318000,
+      "image": "https://down-id.img.susercontent.com/file/id-11134207-7rasf-m0udzy8e4hsc33",
+      "link": "https://tk.tokopedia.com/ZSxHa96FU/",
+      "review": "Mantap parah. Mouse murah berkualitas. Light weight. 2 jenis koneksi, wired atau 2,4GHz. Charging relatif cepat. Bisa 10.000 dpi, bisa 0ms,. Pengiriman sedikit lewat dari ekspektasi. Tapi barang komplit dan aman.",
+      "rating": "4.8",
+      "reviewsCount": "106",
+      "category": "gaming",
+      "bestFor": "Wireless Gaming",
       "rank": 3
+    },
+    {
+      "id": "xiaomi-band-9",
+      "name": "Xiaomi Smart Band 9 Active",
+      "price": "Rp 369.000",
+      "rawPrice": 369000,
+      "image": "https://p16-oec-va.ibyteimg.com/tos-maliva-i-o3syd03w52-us/4527d42901c54c4caea4f9e003d1aceb~tplv-o3syd03w52-resize-jpeg:250:250.jpeg",
+      "link": "https://vt.tokopedia.com/t/ZS9Lbfu7dBbX3-lDSlU/",
+      "review": "Berfungsi dengan baik, mantap, sangat affordable dan enjoy. Sangat membantu untuk berprogress everyday. jalan kaki menjadi lebih menyenangkan meskipun capek juga sih. But its okay, I enjoy luv",
+      "rating": "4.9",
+      "reviewsCount": "11.8k",
+      "category": "wearables",
+      "bestFor": "Daily Fitness Tracking",
+      "rank": 4
     }
   ]
 }
